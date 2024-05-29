@@ -1,14 +1,18 @@
 using web_api.Data;
+using web_api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Register your services
 builder.Services.AddSingleton<MongoDBService>();
+builder.Services.AddSingleton<UsersService>();
+builder.Services.AddSingleton<ItemsService>();
 
 var app = builder.Build();
 

@@ -1,21 +1,21 @@
-﻿using MongoDB.Driver;
+﻿using Microsoft.Extensions.Configuration;
+using MongoDB.Driver;
 
 namespace web_api.Data
 {
     public class MongoDBService
     {
-        private readonly IConfiguration _config;
-        private readonly IMongoDatabase? _database;
-        public MongoDBService(IConfiguration configuration) {
-            _config = configuration;
+        private readonly IMongoDatabase _database;
 
-            var connectionString = _config.GetConnectionString("DbConnection");
+        public MongoDBService(IConfiguration configuration)
+        {
+            var connectionString = configuration.GetConnectionString("DbConnection");
             var mongoUrl = MongoUrl.Create(connectionString);
             var mongoClient = new MongoClient(mongoUrl);
 
             _database = mongoClient.GetDatabase(mongoUrl.DatabaseName);
         }
 
-        public IMongoDatabase? Database => _database;
+        public IMongoDatabase Database => _database;
     }
 }
