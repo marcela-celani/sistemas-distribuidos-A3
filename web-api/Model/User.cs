@@ -1,10 +1,11 @@
 ﻿// Model/User.cs
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using web_api.Interfaces;
 
 namespace web_api.Model
 {
-    public class User
+    public class User : IUser
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

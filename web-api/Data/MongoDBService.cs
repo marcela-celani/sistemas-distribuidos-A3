@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+using web_api.Interfaces;
 
 namespace web_api.Data
 {
-    public class MongoDBService
+    public class MongoDBService : IMongoDBService
     {
         private readonly IMongoDatabase _database;
 

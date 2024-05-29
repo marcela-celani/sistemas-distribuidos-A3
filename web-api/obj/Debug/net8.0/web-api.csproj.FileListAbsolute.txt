@@ -50,3 +50,4 @@ C:\Users\marce\source\repos\Web-API\web-api\bin\Debug\net8.0\runtimes\linux\nati
 C:\Users\marce\source\repos\Web-API\web-api\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Users\marce\source\repos\Web-API\web-api\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
 C:\Users\marce\source\repos\Web-API\web-api\obj\Debug\net8.0\web-api.sourcelink.json
+C:\Users\marce\source\repos\Web-API\web-api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using web_api.Model;
 using web_api.Services;
+using web_api.Interfaces;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace web_api.Controllers
 {
@@ -34,11 +36,33 @@ namespace web_api.Controllers
         }
 
         [HttpPost]
-        public ActionResult<User> Create(User user)
+        public ActionResult<IUser> Create(User user)  // Alterado para User
         {
-            var createdUser = _userService.Create(user);
+            // Validações
+            if (string.IsNullOrWhiteSpace(user.Name))
+            {
+                return BadRequest("O nome de usuário é obrigatório.");
+            }
 
-            return CreatedAtRoute("GetUser", new { id = createdUser.Id }, createdUser);
+            if (string.IsNullOrWhiteSpace(user.Email))
+            {
+                return BadRequest("O email é obrigatório.");
+            }
+
+            if (string.IsNullOrWhiteSpace(user.Password))
+            {
+                return BadRequest("A senha é obrigatória.");
+            }
+
+            try
+            {
+                var createdUser = _userService.Create(user);
+                return CreatedAtRoute("GetUser", new { id = createdUser.Id }, createdUser);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
@@ -53,12 +77,12 @@ namespace web_api.Controllers
 
             if (existingUser == null)
             {
-                return NotFound();
+                return NotFound("Usuário não encontrado.");
             }
 
             _userService.Update(id, userIn);
 
-            return NoContent();
+            return Ok("Usuário atualizado com sucesso.");
         }
 
         [HttpDelete("{id}")]
@@ -68,12 +92,12 @@ namespace web_api.Controllers
 
             if (user == null)
             {
-                return NotFound();
+                return NotFound("Usuário não encontrado.");
             }
 
             _userService.Remove(id);
 
-            return NoContent();
+            return Ok("Usuário excluido com sucesso.");
         }
     }
 }

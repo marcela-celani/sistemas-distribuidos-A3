@@ -1,5 +1,6 @@
 using web_api.Data;
 using web_api.Services;
+using web_api.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Register your services
-builder.Services.AddSingleton<MongoDBService>();
+builder.Services.AddSingleton<IMongoDBService, MongoDBService>();
 builder.Services.AddSingleton<UsersService>();
 builder.Services.AddSingleton<ItemsService>();
 

@@ -1,9 +1,9 @@
-﻿// Services/ItemsService.cs
-using MongoDB.Bson;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using web_api.Model;
 using web_api.Data;
+using web_api.Interfaces;
 
 namespace web_api.Services
 {
@@ -11,7 +11,7 @@ namespace web_api.Services
     {
         private readonly IMongoCollection<Items> _items;
 
-        public ItemsService(MongoDBService mongoDBService)
+        public ItemsService(IMongoDBService mongoDBService)
         {
             _items = mongoDBService.Database.GetCollection<Items>("items");
         }
@@ -41,6 +41,8 @@ namespace web_api.Services
                 throw new ArgumentException("A descrição é obrigatória.");
             }
 
+            item.Id = null;  // Garante que o ID seja gerado automaticamente
+
             // Inserção no banco de dados
             _items.InsertOne(item);
             return item;
@@ -48,6 +50,32 @@ namespace web_api.Services
 
         public void Update(string id, Items itemIn)
         {
+            // Verifica se o ID fornecido é válido
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentException("ID inválido.");
+            }
+
+            // Verifica se o item a ser atualizado existe no banco de dados
+            var existingItem = _items.Find(item => item.Id == id).FirstOrDefault();
+            if (existingItem == null)
+            {
+                throw new ArgumentException("Item não encontrado.");
+            }
+
+            // Validações
+            if (string.IsNullOrWhiteSpace(itemIn.Title))
+            {
+                throw new ArgumentException("O título é obrigatório.");
+            }
+
+            if (string.IsNullOrWhiteSpace(itemIn.Description))
+            {
+                throw new ArgumentException("A descrição é obrigatória.");
+            }
+
+            // Atualiza os campos do item
+            itemIn.Id = existingItem.Id; // Garante que o ID não será alterado
             _items.ReplaceOne(item => item.Id == id, itemIn);
         }
 

@@ -57,12 +57,12 @@ namespace web_api.Controllers
 
             if (item == null)
             {
-                return NotFound();
+                return NotFound("Tarefa não encontrada.");
             }
 
             _itemsService.Update(id, itemIn);
 
-            return NoContent();
+            return Ok("Tarefa atualizada com sucesso.");
         }
 
         [HttpDelete("{id}")]
@@ -72,12 +72,12 @@ namespace web_api.Controllers
 
             if (item == null)
             {
-                return NotFound();
+                return NotFound("Tarefa não encontrada.");
             }
 
             _itemsService.Remove(item.Id);
 
-            return NoContent();
+            return Ok("Tarefa excluida com sucesso.");
         }
     }
 }
