@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1lWVo77lQyI=",
+  "dgSpecHash": "lnvIcFpk3iA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\marce\\source\\repos\\Web-API\\web-api\\web-api.csproj",
+  "projectFilePath": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\web-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marce\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\marce\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
