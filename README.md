@@ -64,6 +64,6 @@ Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. 
 5. Abra um Pull Request.
 
 ## Autores
-- Marcela Celani - Desenvolvedora - [seu-perfil-github](https://github.com/marcela-celani)
-- Lorena Celani - Desenvolvedora - [seu-perfil-github](https://github.com/lorena-celani)
-- Wanfranklin Alves - Professor da Disciplina - Universidade Potiguar
+- Marcela Celani - Desenvolvedora
+- Lorena Celani - Desenvolvedora
+- Wanfranklin Alves - Orientador - Universidade Potiguar
