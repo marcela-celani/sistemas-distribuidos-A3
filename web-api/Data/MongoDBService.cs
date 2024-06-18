@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
-using web_api.Interfaces;
+﻿using MongoDB.Driver;
+using Microsoft.Extensions.Configuration;
 
 namespace web_api.Data
 {
@@ -11,10 +10,13 @@ namespace web_api.Data
         public MongoDBService(IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("DbConnection");
-            var mongoUrl = MongoUrl.Create(connectionString);
-            var mongoClient = new MongoClient(mongoUrl);
+            var settings = MongoClientSettings.FromConnectionString(connectionString);
+            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
 
-            _database = mongoClient.GetDatabase(mongoUrl.DatabaseName);
+            var client = new MongoClient(settings);
+            var databaseName = client.GetDatabase(configuration["DatabaseName"]);
+
+            _database = databaseName;
         }
 
         public IMongoDatabase Database => _database;
