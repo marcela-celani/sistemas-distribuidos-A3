@@ -1,10 +1,14 @@
-﻿// Controllers/UsersController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 using web_api.Model;
 using web_api.Services;
 using web_api.Interfaces;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Security.Cryptography;
 
 namespace web_api.Controllers
 {
@@ -35,10 +39,10 @@ namespace web_api.Controllers
             return user;
         }
 
-        [HttpPost]
-        public ActionResult<IUser> Create(User user)  // Alterado para User
+        [HttpPost("Sign Up")]
+        public ActionResult<IUser> Register([FromBody] User user)
         {
-            // Validações
+            // Validações do usuário
             if (string.IsNullOrWhiteSpace(user.Name))
             {
                 return BadRequest("O nome de usuário é obrigatório.");
@@ -63,6 +67,20 @@ namespace web_api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] LoginRequest loginRequest)
+        {
+            var user = _userService.ValidateUser(loginRequest.Email, loginRequest.Password);
+
+            if (user == null)
+            {
+                return Unauthorized("Credenciais inválidas.");
+            }
+
+            var token = GenerateJwtToken(user);
+            return Ok(new { Token = token });
         }
 
         [HttpPut("{id}")]
@@ -97,7 +115,42 @@ namespace web_api.Controllers
 
             _userService.Remove(id);
 
-            return Ok("Usuário excluido com sucesso.");
+            return Ok("Usuário excluído com sucesso.");
         }
+
+        private string GenerateJwtToken(User user)
+        {
+            var secretKey = new byte[32]; // 256 bits = 32 bytes
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(secretKey);
+            }
+
+            var credentials = new SigningCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+            new Claim(JwtRegisteredClaimNames.Email, user.Email)
+    };
+
+            var issuer = "cadastrei";
+            var audience = "credenciais_usuario";
+
+            var token = new JwtSecurityToken(
+                issuer: issuer,
+                audience: audience,
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+    }
+
+    public class LoginRequest
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

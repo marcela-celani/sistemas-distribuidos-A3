@@ -93,5 +93,10 @@ namespace web_api.Services
         public void Remove(User userIn) => _users.DeleteOne(user => user.Id == userIn.Id);
 
         public void Remove(string id) => _users.DeleteOne(user => user.Id == id);
+
+        public User ValidateUser(string email, string password)
+        {
+            return _users.Find<User>(user => user.Email == email && user.Password == password).FirstOrDefault();
+        }
     }
 }
