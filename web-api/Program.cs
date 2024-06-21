@@ -41,7 +41,11 @@ builder.Services.AddControllers();
 // Configure Swagger/OpenAPI
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { 
+        Title = "Cadastrei", 
+        Version = "beta", 
+        Description = "API para gerenciamento de usuários e tarefas." 
+    });
 
     // Configuração para adicionar o token JWT no Swagger UI
     var securityScheme = new OpenApiSecurityScheme

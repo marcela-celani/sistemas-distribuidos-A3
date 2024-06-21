@@ -1,4 +1,5 @@
 ﻿// Controllers/ItemsController.cs
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using web_api.Model;
@@ -17,12 +18,15 @@ namespace web_api.Controllers
             _itemsService = itemsService;
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult<List<Items>> Get() => _itemsService.Get();
 
+        [Authorize]
         [HttpGet("user/{userId}")]
         public ActionResult<List<Items>> GetByUserId(string userId) => _itemsService.GetByUserId(userId);
 
+        [Authorize]
         [HttpGet("{id}", Name = "GetItem")]
         public ActionResult<Items> Get(string id)
         {
@@ -36,6 +40,7 @@ namespace web_api.Controllers
             return item;
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult<Items> Create(Items item)
         {
@@ -50,6 +55,7 @@ namespace web_api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Update(string id, Items itemIn)
         {
@@ -65,6 +71,7 @@ namespace web_api.Controllers
             return Ok("Tarefa atualizada com sucesso.");
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
