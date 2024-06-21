@@ -1,66 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\marce\\source\\repos\\web-api\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\data\\imongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\data\\imongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\data\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\data\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\model\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\model\\iitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\iitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\controllers\\itemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\itemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\web-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\web-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\controllers\\itemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\controllers\\itemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\services\\itemsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\services\\itemsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\services\\itemsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\user\\desktop\\front-v3\\sistemas-distribuidos-a3\\web-api\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\model\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\marce\\source\\repos\\web-api\\web-api\\model\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\model\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|c:\\users\\user\\desktop\\front-v3\\sistemas-distribuidos-a3\\web-api\\model\\swaggerdefaultvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\swaggerdefaultvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\model\\iitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\model\\iitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{180D2C49-0B96-4304-B118-0CA149C1EACF}|web-api\\web-api.csproj|solutionrelative:web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,188 +54,148 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MongoDBService.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Data\\MongoDBService.cs",
-              "RelativeDocumentMoniker": "web-api\\Data\\MongoDBService.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Data\\MongoDBService.cs",
-              "RelativeToolTip": "web-api\\Data\\MongoDBService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "DocumentIndex": 8,
+              "Title": "SwaggerDefaultValues.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\SwaggerDefaultValues.cs",
+              "RelativeDocumentMoniker": "web-api\\Model\\SwaggerDefaultValues.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\SwaggerDefaultValues.cs",
+              "RelativeToolTip": "web-api\\Model\\SwaggerDefaultValues.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T12:20:42.488Z"
+              "WhenOpened": "2024-06-21T16:10:41.274Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "IItems.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\IItems.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\IItems.cs",
               "RelativeDocumentMoniker": "web-api\\Model\\IItems.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\IItems.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\IItems.cs",
               "RelativeToolTip": "web-api\\Model\\IItems.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T12:17:54.544Z"
+              "WhenOpened": "2024-06-21T03:22:53.686Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Items.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\Items.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\Items.cs",
               "RelativeDocumentMoniker": "web-api\\Model\\Items.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\Items.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\Items.cs",
               "RelativeToolTip": "web-api\\Model\\Items.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T23:52:12.711Z"
+              "WhenOpened": "2024-06-21T02:36:02.319Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "web-api\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "web-api\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-03T21:27:36.179Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Program.cs",
-              "RelativeDocumentMoniker": "web-api\\Program.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Program.cs",
-              "RelativeToolTip": "web-api\\Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAZAAAA",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\User.cs",
+              "RelativeDocumentMoniker": "web-api\\Model\\User.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\User.cs",
+              "RelativeToolTip": "web-api\\Model\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:15:10.666Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\appsettings.json",
-              "RelativeDocumentMoniker": "web-api\\appsettings.json",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\appsettings.json",
-              "RelativeToolTip": "web-api\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-03T21:38:26.379Z"
+              "WhenOpened": "2024-06-21T03:04:52.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IMongoDBService.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Data\\IMongoDBService.cs",
-              "RelativeDocumentMoniker": "web-api\\Data\\IMongoDBService.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Data\\IMongoDBService.cs",
-              "RelativeToolTip": "web-api\\Data\\IMongoDBService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "web-api\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "web-api\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAALEAAAAAAAAAAAAkwKUAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T12:32:53.273Z",
+              "WhenOpened": "2024-06-21T02:31:45.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Services\\UsersService.cs",
+              "RelativeDocumentMoniker": "web-api\\Services\\UsersService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Services\\UsersService.cs",
+              "RelativeToolTip": "web-api\\Services\\UsersService.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAmwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:32:36.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Program.cs",
+              "RelativeDocumentMoniker": "web-api\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Program.cs",
+              "RelativeToolTip": "web-api\\Program.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAAwGsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:33:17.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemsService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Services\\ItemsService.cs",
+              "RelativeDocumentMoniker": "web-api\\Services\\ItemsService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Services\\ItemsService.cs",
+              "RelativeToolTip": "web-api\\Services\\ItemsService.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAA2wC4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:32:35.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Dockerfile",
-              "RelativeDocumentMoniker": "web-api\\Dockerfile",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Dockerfile",
-              "RelativeToolTip": "web-api\\Dockerfile",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-03T21:30:27.26Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UsersService.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Services\\UsersService.cs",
-              "RelativeDocumentMoniker": "web-api\\Services\\UsersService.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Services\\UsersService.cs",
-              "RelativeToolTip": "web-api\\Services\\UsersService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAUwBkAAAA1AAAA",
+              "Title": "IUser.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\IUser.cs",
+              "RelativeDocumentMoniker": "web-api\\Model\\IUser.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Model\\IUser.cs",
+              "RelativeToolTip": "web-api\\Model\\IUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T23:54:40.331Z"
+              "WhenOpened": "2024-06-21T03:22:50.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "ItemsController.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Controllers\\ItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Controllers\\ItemsController.cs",
               "RelativeDocumentMoniker": "web-api\\Controllers\\ItemsController.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Controllers\\ItemsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\Controllers\\ItemsController.cs",
               "RelativeToolTip": "web-api\\Controllers\\ItemsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAJAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAswCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T22:21:12.683Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "web-api\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "web-api\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T12:52:29.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\User.cs",
-              "RelativeDocumentMoniker": "web-api\\Model\\User.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\User.cs",
-              "RelativeToolTip": "web-api\\Model\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T23:54:19.175Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ItemsService.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Services\\ItemsService.cs",
-              "RelativeDocumentMoniker": "web-api\\Services\\ItemsService.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Services\\ItemsService.cs",
-              "RelativeToolTip": "web-api\\Services\\ItemsService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAIwDUAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T22:17:17.436Z"
+              "WhenOpened": "2024-06-21T02:33:03.493Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "web-api.http",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\web-api.http",
-              "RelativeDocumentMoniker": "web-api\\web-api.http",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\web-api.http",
-              "RelativeToolTip": "web-api\\web-api.http",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\appsettings.json",
+              "RelativeDocumentMoniker": "web-api\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\front-v3\\sistemas-distribuidos-A3\\web-api\\appsettings.json",
+              "RelativeToolTip": "web-api\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-05-28T13:06:42.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IUser.cs",
-              "DocumentMoniker": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\IUser.cs",
-              "RelativeDocumentMoniker": "web-api\\Model\\IUser.cs",
-              "ToolTip": "C:\\Users\\marce\\source\\repos\\web-api\\web-api\\Model\\IUser.cs",
-              "RelativeToolTip": "web-api\\Model\\IUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T15:27:45.098Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-21T02:33:33.067Z"
             }
           ]
         }
