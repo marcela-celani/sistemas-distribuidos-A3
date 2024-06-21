@@ -42,7 +42,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { 
-        Title = "Cadastrei", 
+        Title = "Planejei", 
         Version = "beta", 
         Description = "API para gerenciamento de usuários e tarefas." 
     });

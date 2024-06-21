@@ -6,11 +6,12 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using web_api.Model;
 using web_api.Services;
-using web_api.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authorization;
+using System;
+using web_api.Interfaces;
 
 namespace web_api.Controllers
 {
@@ -30,50 +31,47 @@ namespace web_api.Controllers
         [HttpGet]
         public ActionResult<List<User>> Get() => _userService.Get();
 
-
         [HttpGet("{id}", Name = "GetUser")]
         public ActionResult<User> Get(string id)
         {
-            var user = _userService.Get(id);
-
-            if (user == null)
+            try
             {
-                return NotFound();
+                var user = _userService.Get(id);
+
+                if (user == null)
+                {
+                    return NotFound("Usuário não encontrado.");
+                }
+
+                return user;
             }
-
-            return user;
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
-
 
         [HttpPost("Sign Up")]
         public ActionResult<IUser> Register([FromBody] User user)
         {
-            // Verificar se o modelo é válido
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             try
             {
-
                 var createdUser = _userService.Create(user);
                 return CreatedAtRoute("GetUser", new { id = createdUser.Id }, createdUser);
             }
-            catch (ArgumentException ex)
+            catch (ValidationException ex)
             {
                 return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
 
         [HttpPost("Login")]
         public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var user = _userService.ValidateUser(loginRequest.Email, loginRequest.Password);
 
             if (user == null)
@@ -87,72 +85,101 @@ namespace web_api.Controllers
 
         [Authorize]
         [HttpPut("{id}")]
-        public IActionResult Update(string id, User userIn)
+        public IActionResult Update(string id, [FromBody] User userIn)
         {
-            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(userIn.Id) || id != userIn.Id)
+            // Obter o UserId do usuário autenticado
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Verificar se o ID fornecido é válido
+            if (string.IsNullOrEmpty(id))
             {
-                return BadRequest();
+                return BadRequest("ID inválido.");
             }
 
-            var existingUser = _userService.Get(id);
-
-            if (existingUser == null)
+            // Verificar se o ID fornecido é diferente do UserId do usuário autenticado
+            if (id != userId)
             {
-                return NotFound("Usuário não encontrado.");
+                return Forbid("Você não tem permissão para atualizar este usuário.");
             }
 
-            _userService.Update(id, userIn);
-
-            return Ok("Usuário atualizado com sucesso.");
+            try
+            {
+                // Garantir que o ID do usuário não seja alterado
+                userIn.Id = id;
+                _userService.Update(id, userIn);
+                return Ok("Usuário atualizado com sucesso.");
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
-            var user = _userService.Get(id);
+            // Obter o UserId do usuário autenticado
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            if (user == null)
+            // Verificar se o ID fornecido é válido
+            if (string.IsNullOrEmpty(id))
             {
-                return NotFound("Usuário não encontrado.");
+                return BadRequest("ID inválido.");
             }
 
-            _userService.Remove(id);
+            // Verificar se o ID fornecido é diferente do UserId do usuário autenticado
+            if (id != userId)
+            {
+                return Forbid("Você não tem permissão para excluir este usuário.");
+            }
 
-            return Ok("Usuário excluído com sucesso.");
+            try
+            {
+                _userService.DeleteUserAndItems(id);
+                return Ok("Usuário e itens relacionados excluídos com sucesso.");
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
         private string GenerateJwtToken(User user)
         {
-            // Obter a chave secreta do appsettings.json
             var jwtSettings = _configuration.GetSection("JwtSettings");
-            var secretKey = jwtSettings["SecretKey"]; // Obter como string
-
-            // Converter a chave de string para bytes
+            var secretKey = jwtSettings["SecretKey"];
             var keyBytes = Encoding.UTF8.GetBytes(secretKey);
-
-            // Usar a chave secreta para gerar as credenciais de assinatura
             var credentials = new SigningCredentials(new SymmetricSecurityKey(keyBytes), SecurityAlgorithms.HmacSha256);
-
-            // Construir as reivindicações (claims) para o token JWT
             var claims = new[]
             {
-        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-        new Claim(JwtRegisteredClaimNames.Email, user.Email)
-    };
-
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email)
+            };
             var issuer = jwtSettings["Issuer"];
             var audience = jwtSettings["Audience"];
-
-            // Criar e configurar o token JWT
             var token = new JwtSecurityToken(
                 issuer: issuer,
                 audience: audience,
                 claims: claims,
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: credentials);
-
-            // Escrever o token JWT como uma string
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 

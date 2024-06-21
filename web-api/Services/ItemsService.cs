@@ -79,14 +79,22 @@ namespace web_api.Services
             _items.ReplaceOne(item => item.Id == id, itemIn);
         }
 
-        public void Remove(Items itemIn)
+        public void Remove(string id, string userId)
         {
-            _items.DeleteOne(item => item.Id == itemIn.Id);
-        }
+            var existingItem = _items.Find(item => item.Id == id).FirstOrDefault();
 
-        public void Remove(string id)
-        {
+            if (existingItem == null)
+            {
+                throw new ArgumentException("Item não encontrado.");
+            }
+
+            if (existingItem.UserId != userId)
+            {
+                throw new UnauthorizedAccessException("Você não tem permissão para excluir este item.");
+            }
+
             _items.DeleteOne(item => item.Id == id);
         }
+
     }
 }
