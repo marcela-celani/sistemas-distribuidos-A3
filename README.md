@@ -25,6 +25,21 @@ Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. 
 - **Comunicação entre Componentes**: Permitir a interação e troca de dados entre diferentes partes da aplicação.
 - **Suporte a Banco de Dado**: Integrado com MongoDB.
 
+Autenticação e Autorização:
+
+- Apenas usuários cadastrados podem autenticar no sistema através do endpoint de login.
+- O sistema utiliza tokens JWT para autenticação, garantindo que apenas usuários válidos e autenticados possam acessar recursos protegidos.
+
+Gerenciamento de Itens:
+
+- Apenas usuários autenticados podem criar novos itens.
+- Cada item criado é associado ao usuário que o criou, garantindo que apenas o dono do item possa modificá-lo ou excluí-lo.
+- 
+Validações de Dados:
+
+- Todos os dados recebidos através dos endpoints são validados para garantir integridade e consistência.
+- Validações incluem verificação de formatos de dados corretos (como e-mails válidos) e restrições de tamanho ou tipo de dados.
+
 ## Requisitos
 - **Tecnologias**: .NET (C#)
 - **Banco de Dados**: MongoDB
