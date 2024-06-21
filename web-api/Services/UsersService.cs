@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using web_api.Model;
 using web_api.Interfaces;
 using web_api.Data;
+using MongoDB.Bson;
 
 namespace web_api.Services
 {
@@ -92,7 +93,19 @@ namespace web_api.Services
 
         public void Remove(User userIn) => _users.DeleteOne(user => user.Id == userIn.Id);
 
-        public void Remove(string id) => _users.DeleteOne(user => user.Id == id);
+        public void Remove(string id)
+        {
+            if (!ObjectId.TryParse(id, out _))
+            {
+                throw new ArgumentException("ID inválido.");
+            }
+
+            var result = _users.DeleteOne(user => user.Id == id);
+            if (result.DeletedCount == 0)
+            {
+                throw new ArgumentException("Usuário não encontrado.");
+            }
+        }
 
         public User ValidateUser(string email, string password)
         {

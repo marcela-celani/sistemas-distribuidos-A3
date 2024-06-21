@@ -7,8 +7,10 @@ using Microsoft.IdentityModel.Tokens;
 using web_api.Model;
 using web_api.Services;
 using web_api.Interfaces;
-using Swashbuckle.AspNetCore.Annotations;
+using Microsoft.Extensions.Configuration;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Authorization;
 
 namespace web_api.Controllers
 {
@@ -16,15 +18,18 @@ namespace web_api.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
         private readonly UsersService _userService;
 
-        public UsersController(UsersService userService)
+        public UsersController(IConfiguration configuration, UsersService userService)
         {
             _userService = userService;
+            _configuration = configuration;
         }
 
         [HttpGet]
         public ActionResult<List<User>> Get() => _userService.Get();
+
 
         [HttpGet("{id}", Name = "GetUser")]
         public ActionResult<User> Get(string id)
@@ -39,27 +44,19 @@ namespace web_api.Controllers
             return user;
         }
 
+
         [HttpPost("Sign Up")]
         public ActionResult<IUser> Register([FromBody] User user)
         {
-            // Validações do usuário
-            if (string.IsNullOrWhiteSpace(user.Name))
+            // Verificar se o modelo é válido
+            if (!ModelState.IsValid)
             {
-                return BadRequest("O nome de usuário é obrigatório.");
-            }
-
-            if (string.IsNullOrWhiteSpace(user.Email))
-            {
-                return BadRequest("O email é obrigatório.");
-            }
-
-            if (string.IsNullOrWhiteSpace(user.Password))
-            {
-                return BadRequest("A senha é obrigatória.");
+                return BadRequest(ModelState);
             }
 
             try
             {
+
                 var createdUser = _userService.Create(user);
                 return CreatedAtRoute("GetUser", new { id = createdUser.Id }, createdUser);
             }
@@ -72,6 +69,11 @@ namespace web_api.Controllers
         [HttpPost("Login")]
         public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var user = _userService.ValidateUser(loginRequest.Email, loginRequest.Password);
 
             if (user == null)
@@ -83,6 +85,7 @@ namespace web_api.Controllers
             return Ok(new { Token = token });
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Update(string id, User userIn)
         {
@@ -103,6 +106,7 @@ namespace web_api.Controllers
             return Ok("Usuário atualizado com sucesso.");
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
@@ -120,23 +124,27 @@ namespace web_api.Controllers
 
         private string GenerateJwtToken(User user)
         {
-            var secretKey = new byte[32]; // 256 bits = 32 bytes
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(secretKey);
-            }
+            // Obter a chave secreta do appsettings.json
+            var jwtSettings = _configuration.GetSection("JwtSettings");
+            var secretKey = jwtSettings["SecretKey"]; // Obter como string
 
-            var credentials = new SigningCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.HmacSha256);
+            // Converter a chave de string para bytes
+            var keyBytes = Encoding.UTF8.GetBytes(secretKey);
 
+            // Usar a chave secreta para gerar as credenciais de assinatura
+            var credentials = new SigningCredentials(new SymmetricSecurityKey(keyBytes), SecurityAlgorithms.HmacSha256);
+
+            // Construir as reivindicações (claims) para o token JWT
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-            new Claim(JwtRegisteredClaimNames.Email, user.Email)
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+        new Claim(JwtRegisteredClaimNames.Email, user.Email)
     };
 
-            var issuer = "cadastrei";
-            var audience = "credenciais_usuario";
+            var issuer = jwtSettings["Issuer"];
+            var audience = jwtSettings["Audience"];
 
+            // Criar e configurar o token JWT
             var token = new JwtSecurityToken(
                 issuer: issuer,
                 audience: audience,
@@ -144,13 +152,18 @@ namespace web_api.Controllers
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: credentials);
 
+            // Escrever o token JWT como uma string
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-    }
 
-    public class LoginRequest
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public class LoginRequest
+        {
+            [Required(ErrorMessage = "O campo Email é obrigatório.")]
+            [EmailAddress(ErrorMessage = "O campo Email deve conter um endereço de e-mail válido.")]
+            public string Email { get; set; }
+
+            [Required(ErrorMessage = "O campo Senha é obrigatório.")]
+            public string Password { get; set; }
+        }
     }
 }
