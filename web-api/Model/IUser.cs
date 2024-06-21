@@ -1,5 +1,4 @@
-﻿// Interfaces/IUser.cs
-namespace web_api.Interfaces
+﻿namespace web_api.Interfaces
 {
     public interface IUser
     {

@@ -1,16 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using web_api.Model;
 using web_api.Services;
-using Microsoft.Extensions.Configuration;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authorization;
-using System;
 using web_api.Interfaces;
 
 namespace web_api.Controllers
@@ -47,7 +43,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
@@ -65,7 +61,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
@@ -119,7 +115,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
@@ -157,7 +153,7 @@ namespace web_api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, "Erro interno do servidor.");
             }
         }
 

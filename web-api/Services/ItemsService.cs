@@ -1,9 +1,6 @@
 ﻿using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
 using web_api.Model;
 using web_api.Data;
-using web_api.Interfaces;
 
 namespace web_api.Services
 {

@@ -1,8 +1,6 @@
-﻿// Model/User.cs
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 using web_api.Interfaces;
 
 namespace web_api.Model

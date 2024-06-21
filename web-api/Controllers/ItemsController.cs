@@ -1,7 +1,6 @@
-﻿// Controllers/ItemsController.cs
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using MongoDB.Bson;
 using System.Security.Claims;
 using web_api.Model;
 using web_api.Services;
@@ -13,10 +12,12 @@ namespace web_api.Controllers
     public class ItemsController : ControllerBase
     {
         private readonly ItemsService _itemsService;
+        private readonly UsersService _userService;
 
-        public ItemsController(ItemsService itemsService)
+        public ItemsController(ItemsService itemsService, UsersService userService)
         {
             _itemsService = itemsService;
+            _userService = userService;
         }
 
         [Authorize]
@@ -25,17 +26,39 @@ namespace web_api.Controllers
 
         [Authorize]
         [HttpGet("user/{userId}")]
-        public ActionResult<List<Items>> GetByUserId(string userId) => _itemsService.GetByUserId(userId);
+        public ActionResult<List<Items>> GetByUserId(string userId)
+        {
+            // Verificar se o ID fornecido é válido
+            if (!ObjectId.TryParse(userId, out _))
+            {
+                return BadRequest("ID inválido.");
+            }
+
+            var items = _itemsService.GetByUserId(userId);
+
+            if (items == null || items.Count == 0)
+            {
+                return NotFound("Itens não encontrados.");
+            }
+
+            return items;
+        }
 
         [Authorize]
         [HttpGet("{id}", Name = "GetItem")]
         public ActionResult<Items> Get(string id)
         {
+            // Verificar se o ID fornecido é válido
+            if (!ObjectId.TryParse(id, out _))
+            {
+                return BadRequest("ID inválido.");
+            }
+
             var item = _itemsService.Get(id);
 
             if (item == null)
             {
-                return NotFound();
+                return NotFound("Item não encontrado.");
             }
 
             return item;
@@ -64,6 +87,10 @@ namespace web_api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro interno do servidor.");
+            }
         }
 
         [Authorize]
@@ -73,10 +100,10 @@ namespace web_api.Controllers
             // Obter o UserId do usuário autenticado
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            // Verificar se o ID fornecido é válido
-            if (string.IsNullOrEmpty(id))
+            // Verificar se o ID do item fornecido é válido
+            if (!ObjectId.TryParse(id, out _))
             {
-                return BadRequest("ID inválido.");
+                return BadRequest("ID do item inválido.");
             }
 
             // Verificar se o item existe no banco de dados
@@ -86,26 +113,37 @@ namespace web_api.Controllers
                 return NotFound("Item não encontrado.");
             }
 
-            // Verificar se o item pertence ao usuário autenticado
-            if (existingItem.UserId != userId)
-            {
-                return Forbid("Você não tem permissão para atualizar este item.");
-            }
-
             try
             {
+                // Verificar se o UserId fornecido existe no banco de dados e se pertence ao usuário autenticado
+                var userExists = _userService.Get(userId); // Assumindo que _userService.Get(userId) retorna o usuário ou null se não encontrado
+                if (userExists == null)
+                {
+                    return NotFound("UserId inexistente.");
+                }
+
+                // Verificar se o item pertence ao usuário autenticado
+                if (existingItem.UserId != userId)
+                {
+                    return Forbid("UserId não autorizado.");
+                }
+
                 // Garantir que o Id do item não seja alterado
                 itemIn.Id = id;
                 _itemsService.Update(id, itemIn);
                 return Ok("Item atualizado com sucesso.");
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Dados inválidos fornecidos.");
             }
-            catch (Exception ex)
+            catch (UnauthorizedAccessException)
             {
-                return StatusCode(500, ex.Message);
+                return Forbid("Usuário não autorizado.");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro interno do servidor.");
             }
         }
 
@@ -130,7 +168,10 @@ namespace web_api.Controllers
             {
                 return NotFound("Item não encontrado.");
             }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro interno do servidor.");
+            }
         }
-
     }
 }
