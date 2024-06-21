@@ -31,6 +31,7 @@ Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. 
 - **Suporte a Banco de Dado**: Integrado com MongoDB.
 
 **OBSERVAÇÕES**
+
 Autenticação e Autorização:
 
 - Apenas usuários cadastrados podem autenticar no sistema através do endpoint de login.
