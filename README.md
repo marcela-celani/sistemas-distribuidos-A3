@@ -18,6 +18,11 @@ Desenvolver uma aplicação distribuída (aplicação desktop), utilizando a tec
 Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. A aplicação permite a comunicação entre API e banco de dados, realizando operações CRUD (Create, Read, Update, Delete) e gerenciada pelo Swagger.
 
 ## Funcionalidades
+- **Cadastro de Usuários**: Adicionar novas contas ao sistema.
+- **Login**: Permitir acesso as funções protegidas do sistema.
+- **Visualização de Usuários**: Listar todas as contas cadastradas.
+- **Edição de Usuários**: Atualizar informações de contas existentes.
+- **Exclusão de Usuários**: Remover contas do sistema.
 - **Cadastro de Tarefas**: Adicionar novas tarefas ao sistema.
 - **Visualização de Tarefas**: Listar todas as tarefas cadastradas.
 - **Edição de Tarefas**: Atualizar informações de tarefas existentes.
@@ -29,12 +34,14 @@ Autenticação e Autorização:
 
 - Apenas usuários cadastrados podem autenticar no sistema através do endpoint de login.
 - O sistema utiliza tokens JWT para autenticação, garantindo que apenas usuários válidos e autenticados possam acessar recursos protegidos.
+- O sistema está na versão beta e suas permissões de administrador e usuário comum ainda estão sendo implementadas.
 
-Gerenciamento de Itens:
+Gerenciamento de Tarefas:
 
-- Apenas usuários autenticados podem criar novos itens.
-- Cada item criado é associado ao usuário que o criou, garantindo que apenas o dono do item possa modificá-lo ou excluí-lo.
-- 
+- Apenas usuários autenticados podem criar novas tarefas.
+- Cada tarefa criado é associado ao usuário que o criou, garantindo que apenas o dono da tarefa possa modificá-la ou excluí-la.
+- Ao remover um usuário do banco de dados (exclusão de conta), as tarefas vinculadas a este também são removidas.
+  
 Validações de Dados:
 
 - Todos os dados recebidos através dos endpoints são validados para garantir integridade e consistência.
