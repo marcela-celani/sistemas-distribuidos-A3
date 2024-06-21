@@ -15,7 +15,7 @@ Desenvolver uma aplicação distribuída (aplicação desktop), utilizando a tec
 - [Autores](#autores)
 
 ## Descrição do Projeto
-Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. A aplicação permite a comunicação entre diferentes componentes e realiza operações CRUD (Create, Read, Update, Delete) com um banco de dados. 
+Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. A aplicação permite a comunicação entre API e banco de dados, realizando operações CRUD (Create, Read, Update, Delete) e gerenciada pelo Swagger.
 
 ## Funcionalidades
 - **Cadastro de Tarefas**: Adicionar novas tarefas ao sistema.
@@ -52,9 +52,8 @@ Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. 
 ## Uso
 
 ### Executando a Aplicação
-1. Abra o projeto no seu ambiente de desenvolvimento preferido (Visual Studio).
-2. Configure o banco de dados conforme necessário.
-3. Execute a aplicação.
+1. Abra o projeto no seu ambiente de desenvolvimento (Visual Studio ou Visual Studio Code).
+2. Execute a aplicação e abra o link em seu navegador utilizando localhost.
 
 ## Contribuição
 1. Faça um fork do projeto.
