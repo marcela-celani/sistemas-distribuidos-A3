@@ -30,6 +30,7 @@ Este projeto consiste em uma aplicação distribuída para cadastro de tarefas. 
 - **Comunicação entre Componentes**: Permitir a interação e troca de dados entre diferentes partes da aplicação.
 - **Suporte a Banco de Dado**: Integrado com MongoDB.
 
+**OBSERVAÇÕES**
 Autenticação e Autorização:
 
 - Apenas usuários cadastrados podem autenticar no sistema através do endpoint de login.
